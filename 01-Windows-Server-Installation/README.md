@@ -51,7 +51,7 @@ Obtain the official Windows Server installation media.
 
 ### Actions Performed
 
-- [Downloaded](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2025) the Windows Server 2025 ISO.
+- Downloaded the [Windows Server 2025 ISO](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2025).
 - Verified that the ISO would be used to create the installation media.
 
 ### Screenshot
@@ -169,7 +169,7 @@ Keeping Windows updated provides a stable and secure foundation before configuri
 
 ### Screenshot
 
-![Windows Server 2025 Windows Update checking for and installing available updates](images/04-windows-server-update.png)
+![Windows Server 2025 Windows Update checking for and installing available updates](images/04-windows-server-update.PNG)
 
 # Verification
 
