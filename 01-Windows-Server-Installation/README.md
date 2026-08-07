@@ -2,54 +2,61 @@
 
 ## Objective
 
-Install Windows Server 2025 on the physical server and prepare a stable operating system that will later serve as the Hyper-V host for my home lab.
+Install Windows Server 2025 on the physical server and establish a stable operating system that will later be configured as the Hyper-V host for my home lab.
 
-This module also documents the preparation of the installation media, storage configuration, and the troubleshooting steps I encountered during installation.
+This module documents the preparation of the installation media, the Windows Server installation process, the troubleshooting encountered during installation, and the initial operating system updates.
 
 # Skills Demonstrated
 
-- Windows Server deployment
+- Windows Server installation
 - Bootable USB creation
 - BIOS troubleshooting
-- Storage preparation
-- Disk partition planning
+- Storage troubleshooting
 - Windows Update
-- Technical troubleshooting
-- Documentation
+- Technical documentation
 
 # Technologies Used
 
-- Windows Server 2025
-- Rufus Standard
-- DiskPart
-- BIOS (UEFI)
-- NVMe SSD
+| Technology | Purpose |
+|------------|---------|
+| Windows Server 2025 | Host operating system |
+| Rufus | Bootable USB creation |
+| UEFI BIOS | System firmware configuration |
+| Intel VMD Controller | Storage controller configuration |
+| NVMe SSD | Operating system installation |
+| Windows Update | Operating system updates |
 
 # Lab Environment
 
-## Hardware
-| **Component**    | **Specification**     |
-|------------------|-----------------------|
-| Processor        | Intel Core i5-10500T  |
-| Memory           | 32 GB RAM             |
-| Storage1         | TB NVMe SSD           |
-| Future Host Name | HV01                  |
+| Component | Specification |
+|-----------|---------------|
+| Processor | Intel Core i5-10500T |
+| Memory | 32 GB RAM |
+| Storage | 1 TB NVMe SSD |
+| Operating System | Windows Server 2025 |
 
 # Background
 
-Before Windows Server roles such as Hyper-V, Active Directory Domain Services, DNS, and DHCP can be installed, the operating system must first be deployed correctly.
+Windows Server provides the foundation for enterprise infrastructure services such as virtualization, Active Directory Domain Services, Domain Name System (DNS), Dynamic Host Configuration Protocol (DHCP), file services, and centralized management.
 
-A properly prepared installation reduces future configuration problems and provides a stable foundation for the lab environment.
+Before configuring these services, the operating system must first be installed correctly and verified to be functioning properly.
 
 # Procedure
 
-## Step 1 - Download Windows Server ISO
+## Step 1 - Download Windows Server 2025 ISO
 
-Downloaded the official Windows Server 2025 ISO that will be used to create the installation media.
+### Purpose
+
+Obtain the official Windows Server installation media.
+
+### Actions Performed
+
+- [Downloaded](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2025) the Windows Server 2025 ISO.
+- Verified that the ISO would be used to create the installation media.
 
 ### Screenshot
 
-insert screenshot
+![Screenshot of the website for Windows Server 2025 ISO](images/01-download-windows-server-iso.png)
 
 ## Step 2 - Create Bootable USB
 
@@ -59,187 +66,177 @@ Create a bootable USB drive containing the Windows Server 2025 installation medi
 
 ### Actions Performed
 
-- Downloaded the Windows Server 2025 ISO.
-- Used Rufus to create a bootable USB installer.
-- Prepared the USB drive for Windows Server installation.
+- Used [Rufus](https://rufus.ie/en/#download) to create a bootable Windows Server installation USB.
+- Prepared the USB drive for operating system installation.
 
 ### My Experience
 
-During a previous Windows 11 installation on my companion's desktop computer, I chose **Rufus Portable** because I assumed it was the better version.
+During a previous Windows 11 installation on my companion's desktop computer, I selected **Rufus Portable** because I assumed it was the better version.
 
-During that installation, I encountered several issues and became confused about the installation process. At one point, after removing the installation USB drive, Windows no longer booted correctly. Looking back, I realized I had made mistakes during the installation and boot process rather than the issue being caused by Windows itself.
-
-After reviewing the differences between the two editions of Rufus, I realized that I had misunderstood the purpose of the Portable version.
+During that installation, I encountered several problems and later realized that I had misunderstood the purpose of the Portable edition. After reviewing the differences between the two versions of Rufus, I concluded that my choice of edition did not match my actual use case.
 
 ### What I Learned
 
-For my personal workflow, **Rufus Standard** is the better choice because I create bootable USB drives on my own computer and do not need Rufus to carry its settings between multiple computers.
+For my personal workflow, **Rufus Standard** is the better choice because I create bootable USB drives on my own computer and do not need Rufus to preserve its settings across multiple computers.
 
 I learned that:
 
-- **Rufus Standard** is the recommended edition for typical Windows installation tasks.
-- **Rufus Portable** is designed for users who want to carry Rufus between different computers while preserving its configuration.
+- **Rufus Standard** is the recommended edition for most users creating bootable USB drives on a single computer.
+- **Rufus Portable** is intended for users who frequently use Rufus on multiple computers while keeping the same application settings.
 
-The difference is based on portability and configuration storage, **not** on installation performance.
+The difference between the two editions is based on portability and configuration storage rather than installation performance.
 
 ### Reflection
 
-While reviewing my previous Windows 11 installation, I also realized that some of the installation problems were likely caused by my own installation process rather than by Rufus itself.
-
-One possibility is that I did not properly verify the boot device during installation. This experience reminded me that understanding the installation workflow is just as important as selecting the correct tool.
+Reviewing my previous Windows installation also taught me that installation issues are not always caused by the software itself. Understanding the installation workflow and selecting the appropriate tool are equally important.
 
 ### Lesson Learned
 
-This experience taught me that troubleshooting should begin by reviewing my own installation steps before assuming the software or hardware is at fault.
+This experience reminded me to understand the purpose of the tools I use instead of selecting them based on assumptions.
 
-It also reinforced the importance of understanding the purpose of the tools I use instead of choosing one based on assumptions.
+### Screenshot
 
-## Step 3 - Boot from the USB Installer
+![Official Rufus website displaying the latest available download](images/02-download-rufus.png)
 
-Configured the computer to boot from the Windows Server installation media.
+![Rufus successfully configured and ready to create the Windows Server 2025 bootable USB](images/03-bootable-usb-ready.png)
 
-During the installation process, Windows Setup could not detect the NVMe SSD.
+## Step 3 - Boot from the Installation Media
+
+### Purpose
+
+Start the Windows Server installation using the bootable USB.
+
+### Actions Performed
+
+- Booted the computer using the Windows Server installation USB.
+- Started the Windows Setup process.
 
 ## Step 4 - Troubleshoot Storage Detection
 
 ### Problem
 
-Windows Setup did not display any available storage devices.
+Windows Setup could not detect the NVMe SSD.
 
 ### Investigation
 
-Instead of assuming the SSD was faulty, I investigated the BIOS configuration.
+Instead of assuming the SSD was faulty, I reviewed the BIOS configuration.
 
-I discovered that the Intel VMD Controller was enabled.
+I found that the **Intel VMD Controller** was enabled.
 
 ### Resolution
 
 - Disabled Intel VMD Controller.
-- SATA Controller Mode became available.
-- Changed the storage controller mode to AHCI.
-- Restarted the installation.
+- The SATA Controller Mode option became available.
+- Changed the storage controller mode to **AHCI**.
+- Restarted Windows Setup.
 
-After changing the BIOS configuration, Windows Setup successfully detected the SSD.
+After updating the BIOS configuration, Windows Setup successfully detected the SSD.
 
-### Lesson
+### Lesson Learned
 
-This experience taught me that storage detection issues are not always hardware failures. BIOS storage controller settings can prevent Windows Setup from detecting NVMe drives.
+This experience taught me that storage detection problems can be caused by BIOS storage controller settings rather than hardware failure.
 
 ## Step 5 - Install Windows Server
 
-Installed Windows Server 2025 using the detected NVMe SSD.
+### Purpose
 
-The installation completed successfully.
+Install Windows Server 2025 on the detected NVMe SSD.
 
-> Note:
-> I do not have screenshots of the installation wizard because screenshots cannot be captured during the operating system installation process.
+### Actions Performed
 
-## Step 6 - Partition the Storage
+- Selected the installation drive.
+- Completed the Windows Server installation.
+- Created the initial Administrator account.
+- Successfully logged in to Windows Server.
 
-After Windows Server installation, I organized the storage into three logical partitions.
+> **Note**
+>
+> I do not have screenshots of the Windows installation wizard because screenshots cannot be captured during the operating system installation process.
 
-| Drive | Label         |  Purpose                                                                |
-|-------|---------------|-------------------------------------------------------------------------|
-| C:    | System        | Windows Server operating system                                         |
-| D:    | Lab           | Hyper-V virtual machines and lab files                                  |
-| E:    | Resources     | ISO files, drivers, scripts, installers, screenshots, and documentation |
+## Step 6 - Install Windows Updates
 
-This storage layout keeps the operating system separate from lab resources and makes future maintenance easier.
+### Purpose
 
-## Step 7 - Install Windows Updates
+Update Windows Server before installing additional roles or features.
 
-After completing the installation, I installed the latest Windows Updates before proceeding with any server roles.
+### Actions Performed
 
-Keeping the operating system updated provides a more secure and stable foundation for future configuration.
+- Connected the server to the Internet.
+- Installed the latest available Windows Updates.
+- Restarted the server when required.
+
+Keeping Windows updated provides a stable and secure foundation before configuring additional Windows Server roles.
 
 ### Screenshot
 
-insert screenshot
-
+![Windows Server 2025 Windows Update checking for and installing available updates](images/04-windows-server-update.png)
 
 # Verification
 
-The installation was considered successful after verifying the following:
-
-- Windows Server booted successfully.
-- Windows detected the NVMe SSD correctly.
-- The storage partitions were created successfully.
+The installation was verified by confirming that:
+- Windows Server installed successfully.
+- The NVMe SSD was detected after updating the BIOS configuration.
+- Windows booted normally.
 - Internet connectivity was available.
 - Windows Update completed successfully.
 
 # Problems Encountered
 
-## Problem
-
-Windows Setup could not detect the NVMe SSD.
-
-### Cause
-
-Intel VMD Controller was enabled in the BIOS.
-
-### Resolution
-
-Disabled Intel VMD Controller and switched the storage controller mode to AHCI.
-
-### Result
-
-Windows Setup successfully detected the SSD and the installation proceeded normally.
-
+| Problem | Cause | Resolution |
+|---------|-------|------------|
+| Windows Setup could not detect the NVMe SSD | Intel VMD Controller enabled | Disabled Intel VMD Controller and changed the storage controller mode to AHCI |
 
 # Lessons Learned
 
-During this module, I learned several practical lessons beyond simply installing Windows Server.
+During this module, I gained several practical lessons that improved my understanding of Windows Server installation.
 
-### Difference Between Rufus Standard and Rufus Portable
+### Selecting the Appropriate Rufus Edition
 
-I learned that Rufus Portable stores its configuration inside the application folder, making it convenient to use across different computers.
+I initially believed that Rufus Portable was the better option. After reviewing my previous installation experience, I learned that Rufus Standard is the more appropriate choice for my personal workflow.
 
 ### BIOS Configuration Can Affect Windows Installation
 
-I learned that BIOS settings can directly affect whether Windows Setup detects storage devices.
-
-Rather than assuming the SSD was defective, I investigated the BIOS configuration first.
+I learned that BIOS settings directly affect whether Windows Setup can detect storage devices.
 
 ### Intel VMD Controller
 
-Before this installation, I was unfamiliar with Intel VMD.
+I learned that Intel VMD is designed for specific storage configurations but may require additional drivers during Windows installation.
 
-After troubleshooting, I learned that Intel VMD is designed for specific storage configurations but may require additional drivers during Windows installation.
+For my lab environment, disabling Intel VMD and using AHCI allowed Windows Setup to recognize the NVMe SSD successfully.
 
-For my lab environment, disabling Intel VMD and using AHCI allowed Windows Setup to recognize the NVMe SSD.
+### Troubleshooting Before Reinstalling
 
-### Storage Organization
+Rather than immediately assuming hardware failure, I learned the importance of checking BIOS settings first.
 
-Instead of placing everything on the system drive, I organized the storage into dedicated partitions for the operating system, virtual machines, and lab resources.
-
-This will simplify future Hyper-V management and improve organization.
-
-### Build First, Configure Later
-
-I learned that installing Windows Server is only the first stage of building a server.
-
-Proper planning before installing server roles helps reduce rework later.
+This experience reinforced the value of understanding the installation process before attempting more complex troubleshooting.
 
 # Best Practices
 
-- Download installation media from Microsoft's official source.
-- Keep Windows updated before installing server roles.
-- Separate operating system files from virtual machine storage.
-- Investigate BIOS settings before assuming hardware failure.
-- Document problems and their solutions for future reference.
+- Download installation media from official Microsoft sources.
+- Select the appropriate Rufus edition for the intended workflow.
+- Verify BIOS storage settings before assuming hardware failure.
+- Install Windows Updates before configuring additional server roles.
+- Document installation issues and their resolutions for future reference.
 
 # Real-World Relevance
 
-System administrators are responsible not only for installing operating systems but also for troubleshooting hardware detection issues, preparing storage, and ensuring servers are stable before deploying production services.
+Installing Windows Server is a fundamental responsibility of system administrators. In production environments, administrators must not only deploy operating systems but also troubleshoot hardware detection issues, verify firmware configuration, and ensure that servers are stable before deploying infrastructure services.
 
-The troubleshooting experience in this module reflects a common real-world deployment scenario where installation problems are caused by firmware or BIOS configuration rather than faulty hardware.
+This module demonstrates the importance of systematic troubleshooting and documenting deployment decisions during server installation.
 
 # Summary
 
-In this module, I successfully installed Windows Server 2025 on my physical server, resolved a storage detection issue caused by the Intel VMD Controller, organized the storage into dedicated partitions, and updated the operating system.
+In this module, I successfully installed Windows Server 2025 on the physical server, resolved a storage detection issue caused by the Intel VMD Controller, and updated the operating system.
 
-This completed the foundation required for building the Hyper-V home lab.
+Completing this module established the foundation for building the Windows Server home lab.
 
 # Next Module
 
-Module 2 - Hyper-V Host Preparation
+**Module 2 - Prepare the Hyper-V Host**
+
+This module will cover:
+- Renaming the server to **HV01**
+- Creating dedicated storage partitions
+- Installing Hyper-V
+- Configuring Hyper-V default storage
+- Creating the External and Internal virtual switches
