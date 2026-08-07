@@ -29,13 +29,14 @@ Current technologies included in this project:
 - GitHub
 
 ## Lab Hardware
-**Component**       **Specification**
-Host Name           HV01
-Processor           Intel Core i5-10500T
-Memory              32 GB RAM
-Storage             1 TB NVMe SSD
-Operating System    Windows Server 2025
-Hypervisor          Hyper-V
+| **Component** | **Specification** |
+|---------------|-------------------|
+| Host Name | HV01 |
+| Processor |Intel Core i5-10500T |
+| Memory | 32 GB RAM |
+| Storage | 1 TB NVMe SSD |
+| Operating System | Windows Server 2025 |
+| Hypervisor | Hyper-V |
 
 ## Completed Modules
 - Module 1 - Windows Server Installation
