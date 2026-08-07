@@ -6,8 +6,6 @@ Install Windows Server 2025 on the physical server and prepare a stable operatin
 
 This module also documents the preparation of the installation media, storage configuration, and the troubleshooting steps I encountered during installation.
 
----
-
 # Skills Demonstrated
 
 - Windows Server deployment
@@ -19,12 +17,10 @@ This module also documents the preparation of the installation media, storage co
 - Technical troubleshooting
 - Documentation
 
----
-
 # Technologies Used
 
 - Windows Server 2025
-- Rufus Portable
+- Rufus Standard
 - DiskPart
 - BIOS (UEFI)
 - NVMe SSD
@@ -32,11 +28,12 @@ This module also documents the preparation of the installation media, storage co
 # Lab Environment
 
 ## Hardware
-**Component**       **Specification**
-Processor           Intel Core i5-10500T
-Memory              32 GB RAM
-Storage             1 TB NVMe SSD
-Future Host Name    HV01
+| **Component**    | **Specification**     |
+|------------------|-----------------------|
+| Processor        | Intel Core i5-10500T  |
+| Memory           | 32 GB RAM             |
+| Storage1         | TB NVMe SSD           |
+| Future Host Name | HV01                  |
 
 # Background
 
@@ -149,8 +146,6 @@ After Windows Server installation, I organized the storage into three logical pa
 
 This storage layout keeps the operating system separate from lab resources and makes future maintenance easier.
 
----
-
 ## Step 7 - Install Windows Updates
 
 After completing the installation, I installed the latest Windows Updates before proceeding with any server roles.
@@ -161,7 +156,6 @@ Keeping the operating system updated provides a more secure and stable foundatio
 
 insert screenshot
 
----
 
 # Verification
 
@@ -200,15 +194,11 @@ During this module, I learned several practical lessons beyond simply installing
 
 I learned that Rufus Portable stores its configuration inside the application folder, making it convenient to use across different computers.
 
----
-
 ### BIOS Configuration Can Affect Windows Installation
 
 I learned that BIOS settings can directly affect whether Windows Setup detects storage devices.
 
 Rather than assuming the SSD was defective, I investigated the BIOS configuration first.
-
----
 
 ### Intel VMD Controller
 
@@ -218,23 +208,17 @@ After troubleshooting, I learned that Intel VMD is designed for specific storage
 
 For my lab environment, disabling Intel VMD and using AHCI allowed Windows Setup to recognize the NVMe SSD.
 
----
-
 ### Storage Organization
 
 Instead of placing everything on the system drive, I organized the storage into dedicated partitions for the operating system, virtual machines, and lab resources.
 
 This will simplify future Hyper-V management and improve organization.
 
----
-
 ### Build First, Configure Later
 
 I learned that installing Windows Server is only the first stage of building a server.
 
 Proper planning before installing server roles helps reduce rework later.
-
----
 
 # Best Practices
 
@@ -244,23 +228,17 @@ Proper planning before installing server roles helps reduce rework later.
 - Investigate BIOS settings before assuming hardware failure.
 - Document problems and their solutions for future reference.
 
----
-
 # Real-World Relevance
 
 System administrators are responsible not only for installing operating systems but also for troubleshooting hardware detection issues, preparing storage, and ensuring servers are stable before deploying production services.
 
 The troubleshooting experience in this module reflects a common real-world deployment scenario where installation problems are caused by firmware or BIOS configuration rather than faulty hardware.
 
----
-
 # Summary
 
 In this module, I successfully installed Windows Server 2025 on my physical server, resolved a storage detection issue caused by the Intel VMD Controller, organized the storage into dedicated partitions, and updated the operating system.
 
 This completed the foundation required for building the Hyper-V home lab.
-
----
 
 # Next Module
 
