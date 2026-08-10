@@ -40,7 +40,7 @@ Current technologies included in this project:
 
 ## Completed Modules
 - Module 1 - Windows Server Installation
-- Module 2 - Hyper-V Host Preparation *(Documentation in Progress)*
+- Module 2 - Hyper-V Host Preparation
 
 ## Planned Modules
 - Module 3 - Create DC01 Virtual Machine
