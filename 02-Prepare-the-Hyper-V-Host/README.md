@@ -281,13 +281,13 @@ Configured:
 
 - Default Virtual Machine location
 
-![Verifying default virtual machines folder](images/configure-hyper-v-settings/04-verify-virtual-machines.PNG)
+![Verifying default virtual machines folder](images/configure-hyper-v-settings/04-verify-virtual-machines.png)
 
 *Figure 4.3.1 Verifying default virtual machines folder.*
 
 - Default Virtual Hard Disk location
 
-![Verifying default virtual hard disks folder](images/configure-hyper-v-settings/04-verify-virtual-hard-disks.PNG)
+![Verifying default virtual hard disks folder](images/configure-hyper-v-settings/04-verify-virtual-hard-disks.png)
 
 *Figure 4.3.2 Verifying default virtual hard disks folder.*
 
