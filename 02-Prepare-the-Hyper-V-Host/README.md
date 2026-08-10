@@ -81,7 +81,12 @@ Using descriptive computer names makes the environment easier to identify and ma
 
 ### Screenshot
 
-images/01-rename-computer.png
+![server manager dashboard](images/01-rename-computer.PNG)
+![local server page](images/02-rename-computer.PNG)
+![system properties](images/03-rename-computer.PNG)
+![computer name/domain change](images/04-rename-computer.PNG)
+![restart message](images/05-rename-computer.PNG)
+![restart now button](images/06-rename-computer.PNG)
 
 ## Step 2 - Organize the Storage
 
@@ -100,6 +105,29 @@ After Windows Server was installed, I organized the storage into dedicated parti
 | E: | Resources | ISO files, drivers, scripts, screenshots, and documentation |
 
 I also created folders to organize the lab resources before deploying any virtual machines.
+
+### Technical Note - Using Shrink Volume
+
+While creating the storage partitions, I learned how the **Shrink Volume** feature in Disk Management calculates partition sizes.
+
+The value entered in the **"Enter the amount of space to shrink in MB"** field represents the amount of storage to remove from the selected partition, **not** the final size of that partition.
+
+My approach was:
+
+1. Calculate how much space I wanted to remain on the current partition.
+2. Enter the amount of space to shrink based on the remaining available storage.
+3. Create a new partition using the unallocated space.
+4. Repeat the process for the next partition until the desired storage layout was completed.
+
+Understanding this process helped me plan the storage layout more accurately and avoid creating partitions with incorrect sizes.
+
+### Example
+
+Suppose the drive has **1 TB** of available space and I want to keep **300 GB** for the system partition.
+
+Instead of entering **300 GB**, I need to calculate how much storage should be removed from the partition. The value entered into **Shrink Volume** is always the amount of space to remove, not the desired final partition size.
+
+This was one of the practical lessons I learned while organizing the storage for my home lab.
 
 ### Why I Did This
 
