@@ -230,8 +230,8 @@ Kept the default Live Migration settings because this feature was not required f
 
 Configured the default storage locations to use the folders created under:
 
-- `D:\Lab\Hyper-V\Virtual Machines`
 - `D:\Lab\Hyper-V\Virtual Hard Disks`
+- `D:\Lab\Hyper-V\Virtual Machines`
 
 This keeps virtual machine files separate from the operating system.
 
