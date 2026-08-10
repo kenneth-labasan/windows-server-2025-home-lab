@@ -168,7 +168,7 @@ To begin the installation:
 2. Selected **Manage**.
 3. Clicked **Add Roles and Features**.
 
-![Server Manager with Add Roles and Features selected](images/install-hyper-v/03-add-roles-and-features.PNG)
+![Server Manager with Add Roles and Features selected](images/install-hyper-v/03-add-roles-and-features.png)
 
 ![Server Manager with Add Roles and Features selected](images/install-hyper-v/03-before-you-begin-page.PNG)
 
