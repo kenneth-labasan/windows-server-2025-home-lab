@@ -293,54 +293,67 @@ Configured:
 
 These settings ensure that newly created virtual machines are stored in the appropriate location instead of the system drive.
 
-## Step 5 - Create the Virtual Switches
+## Step 5 - Configure Virtual Networking
 
 ### Purpose
 
-Prepare the virtual networking environment for future virtual machines.
+Configure the virtual networking required for communication between virtual machines, the host operating system, and the physical network.
 
-### Actions Performed
+### Create the External Virtual Switch
 
-Created:
+To allow future virtual machines to communicate with the physical network, I created an **External Virtual Switch** and selected the physical Ethernet adapter.
 
-- External Virtual Switch
-- Internal Virtual Switch
+![Hyper-V Virtual Switch Manager with the External Virtual Switch configuration](images/create-the-virtual-switches/05-external-virtual-switch.PNG)
 
-The External Virtual Switch provides virtual machines with access to the physical network through the host's physical network adapter.
+*Figure 5.1. Configuring the External Virtual Switch.*
 
-The Internal Virtual Switch allows communication between the host operating system and virtual machines without directly exposing them to the physical network.
-
-### Screenshots
-
-images/05-external-switch.png
-
-images/06-internal-switch.png
-
-## Step 6 - Troubleshoot the Virtual Switch Error
-
-### Problem
+#### Problem Encountered
 
 While creating the External Virtual Switch, Hyper-V displayed the following error:
 
-> External Ethernet adapter is already bound to the Microsoft Virtual Switch protocol.
+> *"External Ethernet adapter 'Intel(R) Ethernet Connection (11) I219-LM' is already bound to the Microsoft Virtual Switch protocol."*
 
-### Cause
+![Hyper-V Virtual Switch error indicating that the physical network adapter is already bound to the Microsoft Virtual Switch protocol](images/create-the-virtual-switches/05-virtual-switch-error.PNG)
+
+*Figure 5.2.1 Hyper-V preventing the creation of another External Virtual Switch because the physical network adapter was already bound to the Microsoft Virtual Switch protocol.*
+
+#### Cause
 
 The physical network adapter was already associated with an existing External Virtual Switch.
 
-Since a physical network adapter can only be bound to one External Virtual Switch at a time, Hyper-V prevented the creation of another External Virtual Switch using the same adapter.
+Hyper-V allows a physical network adapter to be bound to only **one External Virtual Switch** at a time. Because the adapter was already in use, creating another External Virtual Switch with the same adapter was not possible.
 
-### Resolution
+#### Resolution
 
-Instead of creating another External Virtual Switch, I used the existing switch by renaming it to match my naming convention.
+Instead of creating another External Virtual Switch, I used the existing switch and renamed it to match my preferred naming convention.
 
-### Lesson Learned
+This resolved the issue without affecting the existing network configuration.
 
-I learned that one physical network adapter can only be associated with one External Virtual Switch.
+![Hyper-V Virtual Switch Manager showing the Internal Virtual Switch configuration](images/create-the-virtual-switches/05-renamed-external-virtual-switch.PNG)
 
-### Screenshot
+*Figure 5.2.2 Renamed the existing switch.*
 
-images/07-virtual-switch-error.png
+#### Lesson Learned
+
+I learned that a physical network adapter can only be associated with one External Virtual Switch. Before creating a new External Virtual Switch, it is important to verify whether an existing switch is already using the selected network adapter.
+
+### Create the Internal Virtual Switch
+
+After resolving the External Virtual Switch issue, I created an **Internal Virtual Switch**.
+
+The Internal Virtual Switch enables communication between the host operating system and virtual machines without directly connecting them to the physical network.
+
+![Hyper-V Virtual Switch Manager showing the Internal Virtual Switch configuration](images/create-the-virtual-switches/05-internal-virtual-switch.PNG)
+
+*Figure 5.3. Creating the Internal Virtual Switch.*
+
+### Verification
+
+After completing the virtual networking configuration, I verified that:
+
+- The External Virtual Switch was available and functioning correctly.
+- The Internal Virtual Switch was created successfully.
+- Both virtual switches were displayed in **Hyper-V Virtual Switch Manager**.
 
 # Verification
 
