@@ -81,17 +81,17 @@ Using descriptive computer names makes the environment easier to identify and ma
 
 ### Screenshot
 
-![server manager dashboard](images/01-rename-computer.PNG)
+![server manager dashboard](images/rename-computer/01-rename-computer.PNG)
 
-![local server page](images/02-rename-computer.PNG)
+![local server page](images/rename-computer/02-rename-computer.PNG)
 
-![system properties](images/03-rename-computer.PNG)
+![system properties](images/rename-computer/03-rename-computer.PNG)
 
-![computer name/domain change](images/04-rename-computer.PNG)
+![computer name/domain change](images/rename-computer/04-rename-computer.PNG)
 
-![restart message](images/05-rename-computer.PNG)
+![restart message](images/rename-computer/05-rename-computer.PNG)
 
-![restart now button](images/06-rename-computer.PNG)
+![restart now button](images/rename-computer/06-rename-computer.PNG)
 
 ## Step 2 - Organize the Storage
 
@@ -126,11 +126,11 @@ My approach was:
 
 Understanding this process helped me plan the storage layout more accurately and avoid creating partitions with incorrect sizes.
 
-![disk management](images/02-disk-management.PNG)
+![disk management](images/organize-storage/02-disk-management.PNG)
 
 *Figure 2.1. Storage Partition.*
 
-![file explorer](images/02-file-explorer.PNG)
+![file explorer](images/organize-storage/02-file-explorer.PNG)
 
 *Figure 2.1. File Explorer.*
 
@@ -152,59 +152,102 @@ Separating the operating system from virtual machines and documentation keeps th
 
 Before installing the Hyper-V role, I verified that hardware virtualization was enabled using **Task Manager → Performance → CPU**.
 
-![Task Manager showing Virtualization status as Enabled](images/01-task-manager-virtualization-enabled.png)
+![Task Manager showing Virtualization status as Enabled](images/install-hyper-v/03-task-manager-virtualization-enabled.PNG)
 
 *Figure 3.1. Task Manager confirming that hardware virtualization is enabled.*
 
----
+> **Technical Note**
+>
+> Hardware virtualization can also be verified through the BIOS/UEFI firmware settings or by using the `systeminfo` command or PowerShell. For this lab, I verified it using Task Manager.
 
-### Select the Destination Server
+### Step 3.1 - Open the Add Roles and Features Wizard
 
-I selected **HV01** as the destination server in the Add Roles and Features Wizard.
+To begin the installation:
 
-![Server Selection page with HV01 selected](images/02-server-selection-hv01.png)
+1. Opened **Server Manager**.
+2. Selected **Manage**.
+3. Clicked **Add Roles and Features**.
 
-*Figure 3.2. Selecting HV01 as the destination server.*
+![Server Manager with Add Roles and Features selected](images/install-hyper-v/03-add-roles-and-features.PNG)
 
----
+![Server Manager with Add Roles and Features selected](images/install-hyper-v/03-before-you-begin-page.PNG)
 
-### Configure the Virtual Switch
+*Figure 3.1.1, 3.1.2 Opening the Add Roles and Features Wizard.*
 
-During the Hyper-V installation wizard, I selected the physical Ethernet adapter to automatically create an External Virtual Switch.
+### Step 3.2 - Installation Type
 
-![Hyper-V Virtual Switch configuration page](images/03-hyper-v-virtual-switch.png)
+Selected:
 
-*Figure 3.3. Selecting the physical Ethernet adapter for the External Virtual Switch.*
+- **Role-based or feature-based installation**
 
----
+This option is used to install roles directly on a Windows Server.
 
-### Configure Live Migration
+![Role-based or feature-based installation selected](images/install-hyper-v/03-installation-type-page.PNG)
 
-I left the Live Migration settings at their default values because this functionality was not required for the current lab environment.
+*Figure 3.2. Selecting the installation type.*
 
-![Live Migration configuration page](images/04-live-migration-default.png)
+### Step 3.3 - Select the Destination Server
 
-*Figure 3.4. Keeping the default Live Migration configuration.*
+Selected **HV01** as the destination server.
 
----
+![Destination server HV01 selected](images/install-hyper-v/03-server-selection-page.PNG)
 
-### Configure Default Stores
+*Figure 3.3. Selecting HV01 as the destination server.*
 
-I configured the default locations for Virtual Machines and Virtual Hard Disks to use the folders I created under the **D:\Lab\Hyper-V** directory.
+### Step 3.4 - Select the Hyper-V Role
 
-![Default Stores configuration](images/05-default-stores.png)
+Selected the **Hyper-V** role.
 
-*Figure 3.5. Configuring the default storage locations for Hyper-V.*
+Accepted the required management tools and additional features when prompted.
 
----
+![Hyper-V role selected](images/install-hyper-v/03-server-role-hyper-v.PNG)
 
-### Complete the Installation
+*Figure 3.4.1 Selecting the Hyper-V role.*
 
-After reviewing the configuration, I completed the installation and restarted the server.
+![Hyper-V role selected](images/install-hyper-v/03-hyper-v-add-features.PNG)
 
-![Hyper-V installation completed successfully](images/06-hyper-v-install-complete.png)
+*Figure 3.4.2 Adding Features*
 
-*Figure 3.6. Hyper-V role installed successfully.*
+### Step 3.5 - Configure the Virtual Switch
+
+Selected the physical Ethernet adapter to automatically create an External Virtual Switch.
+
+![Virtual Switch configuration](images/install-hyper-v/03-virtual-switches.PNG)
+
+*Figure 3.5. Selecting the physical Ethernet adapter.*
+
+### Step 3.6 - Configure Live Migration
+
+Kept the default Live Migration settings because this feature was not required for the current lab environment.
+
+![Live Migration configuration](images/install-hyper-v/03-live-migration.PNG)
+
+*Figure 3.6. Using the default Live Migration configuration.*
+
+### Step 3.7 - Configure Default Stores
+
+Configured the default storage locations to use the folders created under:
+
+- `D:\Lab\Hyper-V\Virtual Machines`
+- `D:\Lab\Hyper-V\Virtual Hard Disks`
+
+This keeps virtual machine files separate from the operating system.
+
+![Default Stores configuration](images/install-hyper-v/03-default-stores.PNG)
+
+*Figure 3.7. Configuring the default storage locations.*
+
+### Step 3.8 - Complete the Installation
+
+Reviewed the configuration summary, completed the installation, and restarted the server when prompted.
+
+![Hyper-V confirm installation](images/install-hyper-v/03-confirmation-page.PNG)
+
+*Figure 3.8.1 Hyper-V confirm nstallation.*
+
+![Hyper-V installation completed successfully](images/install-hyper-v/03-install-complete.PNG)
+
+*Figure 3.8.2 Hyper-V installation completed successfully.*
 
 ## Step 4 - Configure Hyper-V Settings
 
