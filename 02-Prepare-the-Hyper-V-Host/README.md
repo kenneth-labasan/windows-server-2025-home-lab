@@ -257,18 +257,41 @@ Reviewed the configuration summary, completed the installation, and restarted th
 
 Configure the default locations used by Hyper-V before creating virtual machines.
 
-### Actions Performed
+### Open Hyper-V Manager
+
+To access the Hyper-V management console:
+
+1. Open **Server Manager**.
+2. Select **Tools**.
+3. Click **Hyper-V Manager**.
+4. In the left pane, right-click **HV01**.
+5. Select **Hyper-V Settings**.
+
+![Hyper-V Manager opened from Server Manager](images/configure-hyper-v-settings/04-tools-hyper-v.PNG)
+
+*Figure 4.1. Opening Hyper-V Manager from Server Manager.*
+
+![Opening Hyper-V Settings from HV01](images/configure-hyper-v-settings/04-hyper-v-settings.PNG)
+
+*Figure 4.2. Accessing the Hyper-V Settings for HV01.*
+
+### Configure the Default Storage Locations
 
 Configured:
 
 - Default Virtual Machine location
+
+![Verifying default virtual machines folder](images/configure-hyper-v-settings/04-verify-virtual-machines.PNG)
+
+*Figure 4.3.1 Verifying default virtual machines folder.*
+
 - Default Virtual Hard Disk location
 
+![Verifying default virtual hard disks folder](images/configure-hyper-v-settings/04-verify-virtual-hard-disks.PNG)
+
+*Figure 4.3.2 Verifying default virtual hard disks folder.*
+
 These settings ensure that newly created virtual machines are stored in the appropriate location instead of the system drive.
-
-### Screenshot
-
-images/04-hyper-v-settings.png
 
 ## Step 5 - Create the Virtual Switches
 
