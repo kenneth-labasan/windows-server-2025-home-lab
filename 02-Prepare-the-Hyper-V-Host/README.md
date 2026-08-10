@@ -82,10 +82,15 @@ Using descriptive computer names makes the environment easier to identify and ma
 ### Screenshot
 
 ![server manager dashboard](images/01-rename-computer.PNG)
+
 ![local server page](images/02-rename-computer.PNG)
+
 ![system properties](images/03-rename-computer.PNG)
+
 ![computer name/domain change](images/04-rename-computer.PNG)
+
 ![restart message](images/05-rename-computer.PNG)
+
 ![restart now button](images/06-rename-computer.PNG)
 
 ## Step 2 - Organize the Storage
@@ -135,7 +140,9 @@ Separating the operating system from virtual machines and documentation keeps th
 
 ### Screenshot
 
-images/02-storage-organization.png
+![disk management](images/02-disk-management.PNG)
+
+![file explorer](images/02-file-explorer.PNG)
 
 ## Step 3 - Install the Hyper-V Role
 
