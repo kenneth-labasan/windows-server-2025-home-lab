@@ -267,11 +267,11 @@ To access the Hyper-V management console:
 4. In the left pane, right-click **HV01**.
 5. Select **Hyper-V Settings**.
 
-![Hyper-V Manager opened from Server Manager](images/configure-hyper-v-settings/04-tools-hyper-v.PNG)
+![Hyper-V Manager opened from Server Manager](images/configure-hyper-v-settings/04-tools-hyper-v.png)
 
 *Figure 4.1. Opening Hyper-V Manager from Server Manager.*
 
-![Opening Hyper-V Settings from HV01](images/configure-hyper-v-settings/04-hyper-v-settings.PNG)
+![Opening Hyper-V Settings from HV01](images/configure-hyper-v-settings/04-hyper-v-settings.png)
 
 *Figure 4.2. Accessing the Hyper-V Settings for HV01.*
 
@@ -281,13 +281,13 @@ Configured:
 
 - Default Virtual Machine location
 
-![Verifying default virtual machines folder](images/configure-hyper-v-settings/04-verify-virtual-machines.png)
+![Verifying default virtual machines folder](images/configure-hyper-v-settings/04-verify-virtual-machines.PNG)
 
 *Figure 4.3.1 Verifying default virtual machines folder.*
 
 - Default Virtual Hard Disk location
 
-![Verifying default virtual hard disks folder](images/configure-hyper-v-settings/04-verify-virtual-hard-disks.png)
+![Verifying default virtual hard disks folder](images/configure-hyper-v-settings/04-verify-virtual-hard-disks.PNG)
 
 *Figure 4.3.2 Verifying default virtual hard disks folder.*
 
