@@ -148,19 +148,42 @@ Separating the operating system from virtual machines and documentation keeps th
 
 ### Purpose
 
-Enable virtualization on Windows Server.
+Enable the Windows Server host to create, run, and manage virtual machines by installing the Hyper-V role.
+
+### Prerequisite Verification
+
+Before installing the Hyper-V role, I verified that hardware virtualization was enabled.
+
+I confirmed this by opening **Task Manager → Performance → CPU**, where the **Virtualization** status was displayed as **Enabled**.
+
+Verifying this prerequisite ensured that the server was ready to support Hyper-V and virtual machines.
+
+> **Technical Note**
+>
+> Hardware virtualization can also be verified through the BIOS/UEFI firmware settings or by using Command Prompt (`systeminfo`) or PowerShell. For this lab, I used **Task Manager** because it provided a quick confirmation that virtualization was already enabled.
 
 ### Actions Performed
 
-Installed the Hyper-V role manually using **Server Manager** and the **Add Roles and Features Wizard**.
+- Opened **Server Manager**.
+- Selected **Add Roles and Features**.
+- Chose **Role-based or feature-based installation**.
+- Selected the local server.
+- Selected the **Hyper-V** role.
+- Accepted the required features.
+- Completed the installation.
+- Restarted the server when prompted.
 
-The required Hyper-V components were installed together with the role.
+### Verification
 
-After the installation completed, the server was restarted.
+After the restart, I verified that:
+
+- The **Hyper-V** role was successfully installed.
+- **Hyper-V Manager** appeared under **Tools** in Server Manager.
+- The server was ready for Hyper-V configuration.
 
 ### Screenshot
 
-images/03-hyper-v-installation.png
+**Figure 3.** Hyper-V role installation completed successfully.
 
 ## Step 4 - Configure Hyper-V Settings
 
