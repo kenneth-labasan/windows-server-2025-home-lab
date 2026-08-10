@@ -170,9 +170,11 @@ To begin the installation:
 
 ![Server Manager with Add Roles and Features selected](images/install-hyper-v/03-add-roles-and-features.png)
 
+*Figure 3.1.1 Opening the Add Roles and Features Wizard.*
+
 ![Server Manager with Add Roles and Features selected](images/install-hyper-v/03-before-you-begin-page.PNG)
 
-*Figure 3.1.1, 3.1.2 Opening the Add Roles and Features Wizard.*
+*Figure 3.1.2 Opening the Add Roles and Features Wizard.*
 
 ### Step 3.2 - Installation Type
 
