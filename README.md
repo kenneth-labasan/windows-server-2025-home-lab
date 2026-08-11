@@ -39,22 +39,24 @@ Current technologies included in this project:
 | Hypervisor | Hyper-V |
 
 ## Completed Modules
-- Module 1 - Windows Server Installation
+- Module 1 - Windows Server Installation (HV01)
 - Module 2 - Hyper-V Host Preparation
 - Module 3 - Create DC01 Virtual Machine
+- Module 4 - Install Windows Server 2025 on DC01
 
 ## Planned Modules
-- Module 4 - Install Active Directory Domain Services
-- Module 5 - Configure DNS
-- Module 6 - Join Windows 11 Client to the Domain
-- Module 7 - File Server Configuration
-- Module 8 - Group Policy
-- Module 9 - Dynamic Host Configuration Protocol (DHCP)
-- Module 10 - User and Group Management
-- Module 11 - Shared Folder Permissions
-- Module 12 - PowerShell Administration
-- Module 13 - Troubleshooting Scenarios
-- Module 14 - Best Practices and Lab Review
+- Module 5 - Initial Configuration of DC01
+- Module 6 - Install Active Directory Domain Services
+- Module 7 - Promote DC01 to a Domain Controller
+- Module 8 - Configure Domain Name System (DNS)
+- Module 9 - Join Windows 11 Client to the Domain
+- Module 10 - Dynamic Host Configuration Protocol (DHCP)
+- Module 11 - User and Group Management
+- Module 12 - Shared Folder and NTFS Permissions
+- Module 13 - Group Policy Management
+- Module 14 - PowerShell Administration
+- Module 15 - Troubleshooting Scenarios
+- Module 16 - Best Practices and Lab Review
 
 ## Documentation Structure
 Each module contains:
