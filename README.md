@@ -41,9 +41,9 @@ Current technologies included in this project:
 ## Completed Modules
 - Module 1 - Windows Server Installation
 - Module 2 - Hyper-V Host Preparation
+- Module 3 - Create DC01 Virtual Machine
 
 ## Planned Modules
-- Module 3 - Create DC01 Virtual Machine
 - Module 4 - Install Active Directory Domain Services
 - Module 5 - Configure DNS
 - Module 6 - Join Windows 11 Client to the Domain

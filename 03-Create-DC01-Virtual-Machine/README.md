@@ -65,7 +65,7 @@ Start the virtual machine creation process using Hyper-V Manager.
 4. Selected **HV01**.
 5. Clicked **New** → **Virtual Machine**.
 
-![Hyper-V Manager before creating DC01](images/01-hyper-v-manager.PNG)
+![Hyper-V Manager before creating DC01](images/01-hyper-v-manager.png)
 
 *Figure 3.1. Opening the New Virtual Machine Wizard.*
 
@@ -245,10 +245,6 @@ I verified that the virtual machine was configured with:
 - vSwitch-External connected
 - 80 GB virtual hard disk
 - Windows Server 2025 ISO attached
-
-![DC01 successfully created](images/create-dc01/10-dc01-created.png)
-
-*Figure 3.10. DC01 successfully created and ready for operating system installation.*
 
 # Verification
 
