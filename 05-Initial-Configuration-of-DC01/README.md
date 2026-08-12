@@ -130,7 +130,7 @@ I verified that:
 - The default gateway was **192.168.0.1**.
 - The preferred DNS server was **192.168.0.1**.
 
-![ipconfig verification](images/04-ipconfig.png)
+![ipconfig verification](images/04-ipconfig.PNG)
 
 *Figure 5.4. Verifying the static network configuration.*
 
@@ -158,7 +158,7 @@ I confirmed that:
 - Internet connectivity was available.
 - DNS name resolution was functioning correctly.
 
-![Network connectivity verification](images/initial-configuration/05-network-verification.png)
+![Network connectivity verification](images/05-network-verification.PNG)
 
 *Figure 5.5. Verifying local and Internet connectivity.*
 
