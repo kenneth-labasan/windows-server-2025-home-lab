@@ -45,10 +45,10 @@ Current technologies included in this project:
 - Module 4 - Install Windows Server 2025 on DC01
 - Module 5 - Initial Configuration of DC01
 - Module 6 - Install Active Directory Domain Services
-
-## Planned Modules
 - Module 7 - Promote DC01 to a Domain Controller
 - Module 8 - Configure Domain Name System (DNS)
+
+## Planned Modules
 - Module 9 - Join Windows 11 Client to the Domain
 - Module 10 - Dynamic Host Configuration Protocol (DHCP)
 - Module 11 - User and Group Management
