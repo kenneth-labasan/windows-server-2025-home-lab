@@ -51,7 +51,7 @@ Launch the Windows Server wizard used to install server roles and features.
 2. Selected **Manage**.
 3. Clicked **Add Roles and Features**.
 
-![Before You Begin](images/01-before-you-begin.PNG)
+![Before You Begin](images/01-before-you-begin.png)
 
 *Figure 6.1. Opening the Add Roles and Features Wizard.*
 
