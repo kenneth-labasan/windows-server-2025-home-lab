@@ -50,7 +50,7 @@ Begin the Active Directory Domain Services configuration process.
 2. Selected the notification flag.
 3. Clicked **Promote this server to a domain controller**.
 
-![Promote Domain Controller](images/01-promote-server.PNG)
+![Promote Domain Controller](images/01-promote-server.png)
 
 *Figure 7.1. Launching the Active Directory Domain Services Configuration Wizard.*
 
