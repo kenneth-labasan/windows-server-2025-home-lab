@@ -51,9 +51,9 @@ Current technologies included in this project:
 - Module 10 - Install Windows 11 on WIN11-01
 - Module 11 - Configure Windows 11 Client and Join the Active Directory Domain
 - Module 12 - Active Directory Users and Organizational Units
+- Module 13 - Shared Folder and NTFS Permissions
 
 ## Planned Modules
-- Module 13 - Shared Folder and NTFS Permissions
 - Module 14 - Group Policy Management
 - Module 15 - Dynamic Host Configuration Protocol (DHCP)
 - Module 16 - PowerShell Administration
