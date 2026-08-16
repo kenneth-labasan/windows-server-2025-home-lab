@@ -18,12 +18,12 @@ The purpose of this project is to:
 Current technologies included in this project:
 - Windows Server 2025
 - Hyper-V
-- Active Directory Domain Services (planned)
-- Domain Name System (planned)
+- Active Directory Domain Services
+- Domain Name System
 - Dynamic Host Configuration Protocol (planned)
 - Group Policy (planned)
 - File Services (planned)
-- Windows 11 Client (planned)
+- Windows 11 Client
 - PowerShell
 - Git
 - GitHub
@@ -47,16 +47,18 @@ Current technologies included in this project:
 - Module 6 - Install Active Directory Domain Services
 - Module 7 - Promote DC01 to a Domain Controller
 - Module 8 - Configure Domain Name System (DNS)
+- Module 9 - Create Windows 11 Client Virtual Machine
+- Module 10 - Install Windows 11 on WIN11-01
 
 ## Planned Modules
-- Module 9 - Join Windows 11 Client to the Domain
-- Module 10 - Dynamic Host Configuration Protocol (DHCP)
-- Module 11 - User and Group Management
-- Module 12 - Shared Folder and NTFS Permissions
-- Module 13 - Group Policy Management
-- Module 14 - PowerShell Administration
-- Module 15 - Troubleshooting Scenarios
-- Module 16 - Best Practices and Lab Review
+- Module 11 - Configure Windows 11 Client and Join the Active Directory Domain
+- Module 12 - Active Directory Users and Organizational Units
+- Module 13 - Shared Folder and NTFS Permissions
+- Module 14 - Group Policy Management
+- Module 15 - Dynamic Host Configuration Protocol (DHCP)
+- Module 16 - PowerShell Administration
+- Module 17 - Troubleshooting Scenarios
+- Module 18 - Home Lab Validation and Best Practices
 
 ## Documentation Structure
 Each module contains:
