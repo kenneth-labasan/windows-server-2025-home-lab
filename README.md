@@ -49,10 +49,10 @@ Current technologies included in this project:
 - Module 8 - Configure Domain Name System (DNS)
 - Module 9 - Create Windows 11 Client Virtual Machine
 - Module 10 - Install Windows 11 on WIN11-01
-
-## Planned Modules
 - Module 11 - Configure Windows 11 Client and Join the Active Directory Domain
 - Module 12 - Active Directory Users and Organizational Units
+
+## Planned Modules
 - Module 13 - Shared Folder and NTFS Permissions
 - Module 14 - Group Policy Management
 - Module 15 - Dynamic Host Configuration Protocol (DHCP)
