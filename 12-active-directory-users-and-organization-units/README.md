@@ -66,7 +66,7 @@ Protect container from accidental deletion
 
 for each Organizational Unit.
 
-![Create Organizational Units](images/01-create-ou.PNG)
+![Create Organizational Units](images/01-create-ou.png)
 
 *Figure 12.1. Creating Organizational Units.*
 
@@ -94,7 +94,7 @@ User must change password at next logon
 
 for each user account.
 
-![Create Users](images/02-create-users.PNG)
+![Create Users](images/02-create-users.png)
 
 *Figure 12.2. Creating Active Directory user accounts.*
 
@@ -110,7 +110,7 @@ Created the following Global Security Groups:
 | HR | HR_Users | Global | Security |
 | IT | IT_Users | Global | Security |
 
-![Create Groups](images/03-create-groups.PNG)
+![Create Groups](images/03-create-groups.png)
 
 *Figure 12.3. Creating Global Security Groups.*
 
@@ -131,9 +131,11 @@ Configured the following memberships:
 
 Verified that each user was successfully added to the appropriate security group.
 
-![Group Membership](images/04-group-members.PNG)
+![Group Membership](images/04-hr-group-members.PNG)
 
-*Figure 12.4. Configuring security group membership.*
+![Group Membership](images/04-it-group-members.PNG)
+
+*Figure 12.4.1 & 12.4.2. Configuring security group membership.*
 
 ## Step 5 - Verify Active Directory Structure
 ### Purpose
@@ -167,7 +169,9 @@ Verified that:
 - Security groups were created successfully.
 - Group memberships were configured correctly.
 
-![Directory Structure](images/05-directory-structure.PNG)
+![Directory Structure](images/05-hr-directory-structure.PNG)
+
+![Directory Structure](images/05-it-directory-structure.PNG)
 
 *Figure 12.5. Verifying the Active Directory structure.*
 
