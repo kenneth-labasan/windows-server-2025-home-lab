@@ -119,9 +119,11 @@ Verified that:
 - DNS resolution was functioning correctly.
 - The Active Directory domain could be resolved.
 
+![Connectivity Verification](images/03-ipconfig-after.PNG)
+
 ![Connectivity Verification](images/03-connectivity.PNG)
 
-*Figure 11.3. Verifying connectivity with the Domain Controller.*
+*Figure 11.3.1 & 11.3.2. Verifying connectivity with the Domain Controller.*
 
 ## Step 4 - Join the Active Directory Domain
 ### Purpose
