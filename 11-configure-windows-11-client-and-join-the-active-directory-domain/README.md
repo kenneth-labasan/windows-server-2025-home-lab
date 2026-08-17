@@ -22,7 +22,7 @@ Configure the Windows 11 client with the appropriate network settings and join i
 | Windows 11 Pro | Client operating system |
 | Active Directory Domain Services | Domain authentication |
 | Domain Name System (DNS) | Name resolution |
-| Hyper-V | Virtualization platform |
+| Hyper-V | Virtualization platform
 | Command Prompt | Network verification |
 
 # Lab Environment
@@ -65,7 +65,7 @@ Recorded the existing:
 
 This information was used to avoid IP address conflicts during manual configuration.
 
-![Current Network Configuration](images/01-ipconfig-before.PNG)
+![Current Network Configuration](images/01-ipconfig-before.png)
 
 *Figure 11.1. Current network configuration before assigning a static IP address.*
 
@@ -85,7 +85,7 @@ Configured the following network settings:
 
 The Domain Controller was configured as the Preferred DNS Server to allow the client to locate Active Directory services.
 
-![Static IP Configuration](images/02-static-ip.PNG)
+![Static IP Configuration](images/02-static-ip.png)
 
 *Figure 11.2. Configuring the static IPv4 address.*
 
@@ -119,9 +119,9 @@ Verified that:
 - DNS resolution was functioning correctly.
 - The Active Directory domain could be resolved.
 
-![Connectivity Verification](images/03-ipconfig-after.PNG)
+![Connectivity Verification](images/03-ipconfig-after.png)
 
-![Connectivity Verification](images/03-connectivity.PNG)
+![Connectivity Verification](images/03-connectivity.png)
 
 *Figure 11.3.1 & 11.3.2. Verifying connectivity with the Domain Controller.*
 
@@ -161,7 +161,7 @@ Welcome to the kennethlab.test domain
 
 Restarted the client computer to complete the domain join.
 
-![Domain Join](images/04-domain-join.PNG)
+![Domain Join](images/04-domain-join.png)
 
 *Figure 11.4. Joining WIN11-01 to the Active Directory domain.*
 
