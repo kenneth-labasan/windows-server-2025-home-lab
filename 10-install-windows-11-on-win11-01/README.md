@@ -160,7 +160,7 @@ Set up as a new PC
 
 to create a clean Windows installation.
 
-![OOBE](images/07-oobe.png)
+![OOBE](images/07-oobe.PNG)
 
 *Figure 10.7. Completing the Out-of-Box Experience.*
 
