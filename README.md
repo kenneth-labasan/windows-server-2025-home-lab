@@ -8,11 +8,11 @@ The project is updated as I complete each module, documenting not only the final
 
 ## Purpose
 The purpose of this project is to:
--Build practical Windows Server administration skills.
--Practice real-world infrastructure deployment in a home lab.
--Demonstrate technical knowledge through documented implementation.
--Create a portfolio that showcases my hands-on experience to potential employers.
--Track my progress as I continue learning Microsoft server technologies.
+- Build practical Windows Server administration skills.
+- Practice real-world infrastructure deployment in a home lab.
+- Demonstrate technical knowledge through documented implementation.
+- Create a portfolio that showcases my hands-on experience to potential employers.
+- Track my progress as I continue learning Microsoft server technologies.
 
 ## Technologies
 Current technologies included in this project:
@@ -54,9 +54,9 @@ Current technologies included in this project:
 - Module 13 - Shared Folder and NTFS Permissions
 - Module 14 - Group Policy Management
 - Module 15 - Dynamic Host Configuration Protocol (DHCP)
+- Module 16 - PowerShell Administration
 
 ## Planned Modules
-- Module 16 - PowerShell Administration
 - Module 17 - Troubleshooting Scenarios
 - Module 18 - Home Lab Validation and Best Practices
 
