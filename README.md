@@ -57,7 +57,7 @@ Current technologies included in this project:
 - Module 16 - PowerShell Administration
 
 ## Planned Modules
-- Module 17 - Troubleshooting Scenarios
+- Module 17 - Windows Server Troubleshooting
 - Module 18 - Home Lab Validation and Best Practices
 
 ## Documentation Structure
