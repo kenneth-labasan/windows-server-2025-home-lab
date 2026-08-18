@@ -20,9 +20,9 @@ Current technologies included in this project:
 - Hyper-V
 - Active Directory Domain Services
 - Domain Name System
-- Dynamic Host Configuration Protocol (planned)
-- Group Policy (planned)
-- File Services (planned)
+- Dynamic Host Configuration Protocol
+- Group Policy
+- File Services
 - Windows 11 Client
 - PowerShell
 - Git
@@ -53,9 +53,9 @@ Current technologies included in this project:
 - Module 12 - Active Directory Users and Organizational Units
 - Module 13 - Shared Folder and NTFS Permissions
 - Module 14 - Group Policy Management
+- Module 15 - Dynamic Host Configuration Protocol (DHCP)
 
 ## Planned Modules
-- Module 15 - Dynamic Host Configuration Protocol (DHCP)
 - Module 16 - PowerShell Administration
 - Module 17 - Troubleshooting Scenarios
 - Module 18 - Home Lab Validation and Best Practices
